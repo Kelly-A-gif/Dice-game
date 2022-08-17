@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice-Game</title>
+    <link rel="stylesheet" href="GameStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <main class="main-container" >
+        <section class="player player-1 remove-active-player " >
+            <h1 class = "player-name-1">PLAYER 1</h1>
+            <p class="total-score total-score-1">0</p>
+            <div class="current-score-div">
+                <p class="current-score-name">current</p>
+                <p class="current-score current-score-1">0</p>
+            </div>
+        </section>
+
+        <section class="player player-2 remove-active-player" >
+            <h1 class="player-name-2">PLAYER 2</h1>
+            <p class="total-score total-score-2">0</p>
+            <div class="current-score-div">
+                <p class="current-score-name">current</p>
+                <p class="current-score current-score-2">0</p>
+            </div>
+        </section>
+    </main>
+     <button class="restart-button abs  blur">🔄New Game</button>
+    <img src="dice.jpg" alt="" class="abs blur" id="image">
+    <button class="row-dice-button abs  blur" >🎲Row Dice</button>
+    <button class="hold-button abs  blur">✡️Hold</button>
+    <div id="winner-player">Kelly wins:)</div>
+
+    <div class="notice-div  abs" id="notice">
+        <header>
+            <p class = "notice-name" style="text-decoration:underline ;">Note</p>
+            <button class="cross-button"><i class="fa fa-close" style="font-size:30px;"></i></button>
+        </header>
+        <p class="text">A player wins when the total score reaches 100🙂 Happy playing... </p>
+    </div>
+
+    <!-- <div class="blur-div"></div> -->
+    
+    
+    
+</body>
+<script src="GameScript.js"></script>
+</html>

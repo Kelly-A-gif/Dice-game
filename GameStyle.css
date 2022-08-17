@@ -1,0 +1,136 @@
+body{
+    margin: 0 auto;
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(to top left, rgb(241, 85, 85) ,rgb(110, 110, 216));
+}
+
+.main-container{
+    display: flex;
+    box-shadow: 0 3px 5px 0 black;
+    position: relative;
+    width: 60%;
+    height: 400px;
+}
+.player-1,.player-2{
+    background-color: rgb(224, 178, 178);
+    /* border-radius: 10px; */
+    text-align: center;
+    padding-top: 2em;
+    flex: 10;
+}
+.total-score{
+    font-size: 2em;
+    font-weight: 2em;
+}
+.current-score-div{
+    /* border: 1px solid black; */
+    background-color:rgb(241, 85, 85) ;
+    padding: 0.5em;
+    margin-top: 5em;
+    margin-left: 30%;
+    width: 40%;
+    border-radius: 10px;
+}
+.abs{
+    position: absolute;
+}
+.restart-button,.row-dice-button,.hold-button{
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 0.5em;
+    top: 7rem;
+  
+}
+.restart-button:hover,.row-dice-button:hover,.hold-button:hover{
+    background-color:rgb(253, 173, 173) ;
+}
+
+.restart-button:focus,.row-dice-button:focus,.hold-button:focus{
+    background-color:rgb(255, 118, 118) ;
+}
+img{
+    top: 11rem;
+    width: 6%;
+    height: 3.5em;
+}
+.row-dice-button{
+    top: 22rem;
+}
+.hold-button{
+    top: 24.5rem;
+}
+#winner-player{
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    width: 30%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: white;
+    font-size: 2em;
+    /* border-radius: 10px; */
+    background-image:linear-gradient(to top left, rgb(241, 85, 85) ,rgb(110, 110, 216)) ;
+    visibility: hidden;
+}
+
+/* display guide  */
+.notice-div{
+    border: 1px solid black;
+    width: 45%;
+    height: 6rem;
+    color: black;
+    /* border: 1px solid black; */
+    /* display: none; */
+}
+.notice-div header{
+    height: 35px;
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+}
+i{
+   margin-right:10px; 
+}
+
+.cross-button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.notice-name{
+    margin-top: 5px;
+    margin-left: 40%;
+    font-size: 1.5em;
+}
+.text{
+    padding: 0.5em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+
+
+/* classes */
+.visible-note{
+    visibility: visible;
+}
+.remove-active-player{
+    opacity: 0.5;
+    background-color: rgb(241, 156, 156);
+}
+.blur{
+    opacity: 0.1;
+}
