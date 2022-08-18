@@ -87,13 +87,13 @@ img{
 .notice-div{
     border: 1px solid black;
     width: 45%;
-    height: 6rem;
+    height: 8rem;
     color: black;
     /* border: 1px solid black; */
     /* display: none; */
 }
 .notice-div header{
-    height: 35px;
+    height: 30px;
     display: flex;
     /* border: 1px solid black; */
     justify-content: space-between;
@@ -112,6 +112,7 @@ i{
     margin-top: 5px;
     margin-left: 40%;
     font-size: 1.5em;
+    flex-wrap: nowrap;
 }
 .text{
     padding: 0.5em;
