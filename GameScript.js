@@ -23,7 +23,7 @@ const restart_button = document.querySelector(".restart-button");
 
 
 let score = 0;
-let winner_reach_number = 5;
+let winner_reach_number = 100;
 
 
 row_dice_button.addEventListener('click',function(){
