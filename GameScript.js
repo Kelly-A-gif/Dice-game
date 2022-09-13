@@ -23,7 +23,7 @@ const restart_button = document.querySelector(".restart-button");
 
 
 let score = 0;
-let winner_reach_number = 100;
+let winner_reach_number = 5;
 
 
 row_dice_button.addEventListener('click',function(){
@@ -31,16 +31,11 @@ row_dice_button.addEventListener('click',function(){
     const dice_number = (Math.floor(Math.random() * 6) );
     // console.log(dice_number);
     // score = 0;
-    if( !player1.classList.contains("remove-active-player")){
-     
+    if(!player1.classList.contains("remove-active-player")){
         getDiceNumber(player1,player2,dice_number,current_score_1);
-                 
     }else if(!player2.classList.contains("remove-active-player")){
-        // score = 0;
         getDiceNumber(player2,player1,dice_number,current_score_2);
- 
     }
-    
 })
 
 // handling the dice 1 number condition
@@ -114,7 +109,7 @@ hold_button.addEventListener('click', function(){
 // acknoledging winner with respect to the winner-reach-number.
 function getWinner(elt1,elt2,total_score,current_score,PLAYER){
     let calc_total_score = parseInt(total_score.textContent) + parseInt(current_score.textContent);
-            
+    
     
     if(calc_total_score == winner_reach_number){
         total_score.textContent = calc_total_score;
@@ -122,9 +117,14 @@ function getWinner(elt1,elt2,total_score,current_score,PLAYER){
 
         winner_player.style.visibility = "visible";
         winner_player.textContent = `🎁😃${PLAYER} wins🎁`;
+        
+       document.getElementById("applause").play();
 
         disableButton(row_dice_button);
         disableButton(hold_button);
+        throwLove();
+        setInterval(throwLove, 100);
+
         // alert("player winner");
 
     }else if(total_score.textContent < winner_reach_number && calc_total_score < winner_reach_number ){
@@ -143,6 +143,22 @@ function getWinner(elt1,elt2,total_score,current_score,PLAYER){
     
         // return total_score_1.textContent;
     }
+    
+}
+
+function throwLove(){
+    
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.animationDuration = Math.random()*2 + 3 +'s';
+    heart.style.left= Math.random() *100 + 'vw';
+
+    heart.innerText = "💜"
+   document.body.appendChild(heart);
+  
+   setTimeout(()=>{
+    heart.remove();
+   },3000)
 }
 
 // restart game
@@ -166,9 +182,5 @@ window.addEventListener('DOMContentLoaded',()=>{
 })
 
 cross_button.addEventListener('click',()=>{
-    main_container.classList.remove("blur");
-    notice_div.style.visibility = "hidden";
-    buttons.forEach(elt =>{
-        elt.classList.remove("blur");
-    })
+    notice_div.remove();
 })

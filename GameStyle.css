@@ -1,4 +1,5 @@
 body{
+    scroll-behavior: smooth;
     margin: 0 auto;
     font-family: cursive;
     display: flex;
@@ -7,7 +8,7 @@ body{
     min-height: 100vh;
     min-width: 100%;
     overflow: hidden;
-    background-image: linear-gradient(to top left, rgb(241, 85, 85) ,rgb(110, 110, 216));
+    background-image: linear-gradient(to top left, rebeccapurple ,rgb(151, 118, 184));
 }
 
 .main-container{
@@ -18,7 +19,7 @@ body{
     height: 400px;
 }
 .player-1,.player-2{
-    background-color: rgb(224, 178, 178);
+    background-color: rgb(151, 118, 184);
     /* border-radius: 10px; */
     text-align: center;
     padding-top: 2em;
@@ -30,7 +31,7 @@ body{
 }
 .current-score-div{
     /* border: 1px solid black; */
-    background-color:rgb(241, 85, 85) ;
+    background-color:rebeccapurple ;
     padding: 0.5em;
     margin-top: 5em;
     margin-left: 30%;
@@ -49,11 +50,11 @@ body{
   
 }
 .restart-button:hover,.row-dice-button:hover,.hold-button:hover{
-    background-color:rgb(253, 173, 173) ;
+    background-color:rgb(151, 118, 184) ;
 }
 
 .restart-button:focus,.row-dice-button:focus,.hold-button:focus{
-    background-color:rgb(255, 118, 118) ;
+    background-color:rebeccapurple ;
 }
 img{
     top: 11rem;
@@ -67,7 +68,7 @@ img{
     top: 24.5rem;
 }
 #winner-player{
-    border: 1px solid black;
+    border-radius: 10px;
     position: absolute;
     top: 0;
     width: 30%;
@@ -75,22 +76,43 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
     color: white;
     font-size: 2em;
-    /* border-radius: 10px; */
-    background-image:linear-gradient(to top left, rgb(241, 85, 85) ,rgb(110, 110, 216)) ;
+    background-image:linear-gradient(to top left, rebeccapurple ,rgb(151, 118, 184)) ;
     visibility: hidden;
+}
+.heart{
+    position: fixed;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear forwards; 
+}
+@keyframes fall{
+    to{
+        transform: translateY(105vh);
+    }
 }
 
 /* display guide  */
 .notice-div{
-    border: 1px solid black;
-    width: 45%;
-    height: 8rem;
-    color: black;
-    /* border: 1px solid black; */
-    /* display: none; */
+    color: white;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+    background: hwb(0 99% 1% / 0.4);
+    background: rgba(0, 0, 0 ,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notice-div .main{
+    border: 3px solid white;
+    width: 500px;
+    height: 150px;
 }
 .notice-div header{
     height: 30px;
@@ -98,7 +120,8 @@ img{
     /* border: 1px solid black; */
     justify-content: space-between;
 }
-i{
+header i{
+    color: rgb(223, 32, 32);
    margin-right:10px; 
 }
 
@@ -115,6 +138,8 @@ i{
     flex-wrap: nowrap;
 }
 .text{
+    font-size: 1.2rem;
+    
     padding: 0.5em;
     display: flex;
     text-align: center;
@@ -125,13 +150,7 @@ i{
 
 
 /* classes */
-.visible-note{
-    visibility: visible;
-}
 .remove-active-player{
     opacity: 0.5;
-    background-color: rgb(241, 156, 156);
-}
-.blur{
-    opacity: 0.1;
+    background-color: rebeccapurple;
 }
